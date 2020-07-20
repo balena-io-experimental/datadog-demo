@@ -1,0 +1,10 @@
+version: '2.1'
+services:
+  app_1:
+    build: ./noisy
+  app_2:
+    build: ./noisy
+  app_3:
+    build: ./noisy
+  datadog:
+    build: ./datadog

@@ -1,0 +1,11 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch-build
+
+# Need to do this before we can install the DD agent
+RUN install_packages apt-transport-https
+COPY ./datadog.list /etc/apt/sources.list.d
+RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 A2923DFF56EDA6E76E55E492D3A80E30382E94DE
+RUN install_packages datadog-iot-agent
+
+COPY ./startup.sh /
+
+CMD ["/startup.sh"]
