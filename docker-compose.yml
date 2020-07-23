@@ -8,3 +8,11 @@ services:
     build: ./noisy
   datadog:
     build: ./datadog
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - apparmor:unconfined
+    labels:
+      io.balena.features.balena-socket: 1
+      io.balena.features.procfs: 1
+      io.balena.features.sysfs: 1

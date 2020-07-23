@@ -32,4 +32,4 @@ environment variables that start with `BALENA_` as tags.
 - Don't use `sed` to crowbar environment variables into YAML
 - More testing 
 - Smaller image (currently using Debian, and it's at 676MB)
-
+- Document how to add tags of your own
