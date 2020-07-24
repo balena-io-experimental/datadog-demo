@@ -8,11 +8,9 @@ services:
     build: ./noisy
   datadog:
     build: ./datadog
-    cap_add:
-      - SYS_PTRACE
-    security_opt:
-      - apparmor:unconfined
     labels:
-      io.balena.features.balena-socket: 1
       io.balena.features.procfs: 1
       io.balena.features.sysfs: 1
+      # NOTE: If the IoT agent supports docker, you may get more info
+      # by uncommenting this line:
+      io.balena.features.balena-socket: 1
