@@ -1,4 +1,4 @@
-FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch-build
+FROM balenalib/%%BALENA_MACHINE_NAME%%-debian:stretch-run
 
 # Need to do this before we can install the DD agent
 RUN install_packages apt-transport-https
